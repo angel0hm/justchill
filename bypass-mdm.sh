@@ -27,11 +27,11 @@ echo ""
 
             # Create Temporary User
             echo -e "${NC}Create a Temporary User"
-            read -p "Enter Temporary Fullname (Default is 'Apple'): " realName
-            realName="${realName:=Apple}"
-            read -p "Enter Temporary Username (Default is 'Apple'): " username
-            username="${username:=Apple}"
-            read -p "Enter Temporary Password (Default is '1234'): " passw
+            read -p "Enter Temporary Fullname: " realName
+            realName="${realName:=User Cool}"
+            read -p "Enter Temporary Username: " username
+            username="${username:=user.cool}"
+            read -p "Enter Temporary Password: " passw
             passw="${passw:=1234}"
 
             # Create User
@@ -61,4 +61,5 @@ echo ""
             touch /Volumes/"$system_volume"/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
 
             echo -e "${GRN}MDM enrollment has been bypassed!${NC}"
+            echo -e "${YEL}Password is {$passw}"
             echo -e "${NC}Exit terminal and reboot your Mac.${NC}"
