@@ -26,17 +26,18 @@ echo ""
             fi
 
             # Create Temporary User
-            echo -e "${NC}Creating a Temporary User"
-            echo -e "..."
-            sleep 2
+            echo -e "${NC}Defining a Temporary User"            
+            sleep 1
             realName="${realName:=User Cool}"
             username="${username:=user.cool}"
             passw="${passw:=1234}"
+            echo -e "..."
+            sleep 1
             echo -e "${NC}Done!"
 
             # Create User
             dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
-            echo -e "${GREEN}Creating Temporary User (Again)"
+            echo -e "${GREEN}Creating Temporary User"
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username"
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
